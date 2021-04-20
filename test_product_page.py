@@ -12,3 +12,4 @@ def test_guest_can_add_product_to_basket(browser):
     page.solve_quiz_and_get_code()
     time.sleep(5)
     page.name_message_is_same_name_in_cart()
+    page.cost_is_same_as_cost_product()
