@@ -30,4 +30,12 @@ class ProductPage(BasePage):
         assert cost_product == cost_product_price_in_message, \
         "The product cost of the basket does not match the product cost on product page"
 
+    def element_is_disappeared(self):
+        assert self.is_disappeared(*ProductPageLocators.MESSAGE_ADDED_BASKET), \
+            "Success message added basket is presented, but should not be"
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.MESSAGE_ADDED_BASKET), \
+            "Success message added basket is presented, but should not be"
+
 
