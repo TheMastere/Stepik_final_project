@@ -7,6 +7,7 @@ class ProductPage(BasePage):
     def go_to_product_page(self):
         product_page = self.browser.find_element(*ProductPageLocators.ADD_BASKET)
         product_page.click()
+        self.browser.implicitly_wait(5)
 
     def name_message_is_same_name_in_cart(self):
         assert self.browser.find_element(*ProductPageLocators.MESSAGE_ADDED_BASKET), \
@@ -36,6 +37,6 @@ class ProductPage(BasePage):
 
     def should_not_be_success_message(self):
         assert self.is_not_element_present(*ProductPageLocators.MESSAGE_ADDED_BASKET), \
-            "Success message added basket is presented, but should not be"
+            "Success message \"added to basket\" should dissapeared, but it didn't"
 
 
