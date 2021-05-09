@@ -1,10 +1,5 @@
-
 from .base_page import BasePage
 from .locators import LoginPageLocators
-from .locators import MainPageLocators
-from selenium.webdriver.common.by import By
-import time
-
 
 
 class LoginPage(BasePage):
@@ -30,4 +25,3 @@ class LoginPage(BasePage):
         password_field2 = self.browser.find_element(*LoginPageLocators.REGISTER_PASSWORD_FIELD2)
         password_field2.send_keys(password)
         self.browser.find_element(*LoginPageLocators.REGISTER_BUTTON).click()
-

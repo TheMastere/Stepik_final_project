@@ -9,6 +9,3 @@ class BasketPage(BasePage):
 
     def message_about_add_basket_is_present(self):
         assert not self.is_element_present(*ProductPageLocators.MESSAGE_BASKET_EMPTY), "No message about basket is empty"
-
-
-
